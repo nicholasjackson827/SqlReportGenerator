@@ -8,7 +8,7 @@ public class QueryVariableDate extends QueryVariable {
 	}
 
 	public String getType() {
-		return "Integer";
+		return "Date";
 	}
 
 	public String getVariableSubstitution() {
