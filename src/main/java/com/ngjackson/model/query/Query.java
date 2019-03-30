@@ -22,10 +22,11 @@ public class Query {
 
   public List<Map<String, Object>> executeQuery(NamedParameterJdbcTemplate jdbcTemplate) {
 	  MapSqlParameterSource parameterSource = new MapSqlParameterSource();
-	  variables.stream().forEach(v -> v.prepareSql(parameterSource);
-			  , parameterSource);
+	  variables.stream().forEach(v -> v.prepareSql(parameterSource));
+				     
 	  try {
 	  	return jdbcTemplate.queryForList(template.getSql()
+						 , parameterSource);
 	  } catch (DataAccessException e) {
 		  throw e;
 	  }
