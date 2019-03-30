@@ -3,7 +3,8 @@ package com.ngjackson.model;
 import com.ngjackson.model.QueryVariable;
 
 public class QueryVariableInteger extends QueryVariable {
-	public QueryVariable(String value) {
+
+	public QueryVariableInteger(String value) {
 		super(value);
 	}
 

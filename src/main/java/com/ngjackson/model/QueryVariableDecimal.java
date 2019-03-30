@@ -3,7 +3,8 @@ package com.ngjackson.model;
 import com.ngjackson.model.QueryVariable;
 
 public class QueryVariableDecimal extends QueryVariable {
-	public QueryVariable(String value) {
+
+	public QueryVariableDecimal(String value) {
 		super(value);
 	}
 

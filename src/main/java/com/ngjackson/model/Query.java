@@ -1,12 +1,30 @@
 package com.ngjackson.model;
 
 import java.util.Collection;
-import com.ngjackson.model.QueryTemplate;
+
 public class Query {
+
 	QueryTemplate template;
 	Collection<QueryVariable> variables;
 
-	public Query() {
+	public Query(QueryTemplate template, Collection<QueryVariable> variables) {
+    this.template = template;
+    this.variables = variables;
+  }
 
-	}
+  public QueryTemplate getTemplate() {
+    return template;
+  }
+
+  public Collection<QueryVariable> getVariables() {
+    return variables;
+  }
+
+  @Override
+  public String toString() {
+    return "Query {" +
+        "template=" + template +
+        ", variables=" + variables +
+        '}';
+  }
 }

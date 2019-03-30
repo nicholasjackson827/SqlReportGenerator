@@ -22,7 +22,7 @@ public class QueryTemplate {
   public String toString() {
     return "QueryTemplate{" +
         "id='" + id + '\'' +
-        ", queryTemplate='" + query + '\'' +
+        ", queryTemplate='" + queryTemplate + '\'' +
         '}';
   }
 }
