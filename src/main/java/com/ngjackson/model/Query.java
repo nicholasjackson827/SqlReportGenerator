@@ -4,8 +4,8 @@ import java.util.Collection;
 
 public class Query {
 
-	QueryTemplate template;
-	Collection<QueryVariable> variables;
+  Collection<QueryVariable> variables;
+  QueryTemplate template;
 
 	public Query(QueryTemplate template, Collection<QueryVariable> variables) {
     this.template = template;
