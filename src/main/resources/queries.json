@@ -1,5 +1,5 @@
 {
-  "queries": [
+  "queryTemplates": [
     {
       "variables": [
         {
@@ -9,14 +9,14 @@
       ],
       "query": {
         "name": "Get actors by first name",
-        "query": "select * from sakila.actor where FIRST_NAME = :first_name"
+        "sql": "select * from sakila.actor where FIRST_NAME = :first_name"
       }
     },
     {
       "variables": [],
       "query": {
         "name": "Get all actors",
-        "query": "select * from sakila.actor"
+        "sql": "select * from sakila.actor"
       }
     }
   ]
