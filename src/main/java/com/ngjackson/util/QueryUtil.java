@@ -1,6 +1,8 @@
 package com.ngjackson.util;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.ngjackson.model.Query;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
@@ -10,9 +12,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URISyntaxException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -26,7 +25,10 @@ public class QueryUtil {
 
     String queriesJson = getQueriesJson();
 
-    Gson gson = new Gson();
+    JsonParser parser = new JsonParser();
+    JsonObject queriesJsonObject = parser.parse(queriesJson).getAsJsonObject();
+
+
     return Arrays.asList(gson.fromJson(queriesJson, Query[].class));
   }
 
