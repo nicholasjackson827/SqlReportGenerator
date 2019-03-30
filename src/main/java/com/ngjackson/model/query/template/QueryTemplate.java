@@ -3,13 +3,13 @@ package com.ngjackson.model;
 public class QueryTemplate {
 
   private String name;
-  private String queryTemplate;
+  private String sqlTemplate;
   private Collection<QueryVariableDefinition> variableDefinitions;
   private Map<String, QueryVariableDefinition> variableDefinitionsByName;
 
-  public QueryTemplate(String name, String queryTemplate, Collection<QueryVariableDefinition> variableDefinitions) {
+  public QueryTemplate(String name, String sqlTemplate, Collection<QueryVariableDefinition> variableDefinitions) {
 	  this.name = name;
-    this.queryTemplate = queryTemplate;
+    this.sqlTemplate = sqlTemplate;
     this.variableDefinitions = variableDefinitions;
     this.variableDefinitionsByName = variableDefinitions.stream()
 	    .collect(Collectors.toMap(d -> d.getName(), d -> d);
@@ -19,8 +19,8 @@ public class QueryTemplate {
     return name;
   }
 
-  public String getQueryTemplate() {
-    return queryTemplate;
+  public String getSqlTemplate() {
+    return sqlTemplate;
   }
 
   public QueryVariableDefinition getVariableDefinition(String name) {
@@ -34,7 +34,7 @@ public class QueryTemplate {
   public String toString() {
     return "QueryTemplate{" +
         "name='" + name + '\'' +
-        ", queryTemplate='" + queryTemplate + '\'' +
+        ", sqlTemplate='" + sqlTemplate + '\'' +
         '}';
   }
 }
