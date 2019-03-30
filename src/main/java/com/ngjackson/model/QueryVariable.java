@@ -1,6 +1,6 @@
 package com.ngjackson.model;
 
-public class QueryVariable {
+public abstract class QueryVariable {
 	public String value;
 
 	public QueryVariable(String value) {
