@@ -17,8 +17,20 @@ public class Query {
   }
 
   public Collection<QueryVariable> getVariables() {
-    return variables;
+    return Collections.unmodifiableCollection(variables);
   }
+
+  public List<Map<String, Object>> executeQuery(NamedParameterJdbcTemplate jdbcTemplate) {
+	  MapSqlParameterSource parameterSource = new MapSqlParameterSource();
+	  variables.stream().forEach(v -> v.prepareSql(parameterSource);
+			  , parameterSource);
+	  try {
+	  	return jdbcTemplate.queryForList(template.getSql()
+	  } catch (DataAccessException e) {
+		  throw e;
+	  }
+  }
+  
 
   @Override
   public String toString() {
