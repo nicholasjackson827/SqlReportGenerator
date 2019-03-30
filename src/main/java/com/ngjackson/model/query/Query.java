@@ -25,7 +25,7 @@ public class Query {
 	  variables.stream().forEach(v -> v.prepareSql(parameterSource));
 				     
 	  try {
-	  	return jdbcTemplate.queryForList(template.getSql()
+	  	return jdbcTemplate.queryForList(template.getSqlTemplate()
 						 , parameterSource);
 	  } catch (DataAccessException e) {
 		  throw e;
