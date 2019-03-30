@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 public class HelloWorld {
@@ -21,6 +22,18 @@ public class HelloWorld {
     QueryUtil queryUtil = new QueryUtil();
 
     return queryUtil.getQueries();
+  }
+
+  @RequestMapping("/getQueryNames")
+  public List<String> getQueryNames() throws IOException {
+
+    List<Query> queries = new QueryUtil().getQueries();
+
+    return queries
+        .stream()
+        .map(q -> q.getTemplate().getName())
+        .distinct()
+        .collect(Collectors.toList());
   }
 
 }

@@ -3,26 +3,32 @@ package com.ngjackson.model;
 public class QueryTemplate {
 
   private String id;
-  private String queryTemplate;
+  private String name;
+  private String sql;
 
-  public QueryTemplate(String id, String queryTemplate) {
-    this.id = id;
-    this.queryTemplate = queryTemplate;
+  public QueryTemplate(String name, String sql) {
+    this.name = name;
+    this.sql = sql;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public String getSql() {
+    return sql;
   }
 
   public String getId() {
     return id;
   }
 
-  public String getQueryTemplate() {
-    return queryTemplate;
-  }
-
   @Override
   public String toString() {
     return "QueryTemplate{" +
         "id='" + id + '\'' +
-        ", queryTemplate='" + queryTemplate + '\'' +
+        ", name='" + name + '\'' +
+        ", sql='" + sql + '\'' +
         '}';
   }
 }

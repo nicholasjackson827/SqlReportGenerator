@@ -8,6 +8,7 @@
         }
       ],
       "template": {
+        "id": 1,
         "name": "Get actors by first name",
         "sql": "select * from sakila.actor where FIRST_NAME = :first_name"
       }
@@ -15,6 +16,7 @@
     {
       "variables": [],
       "template": {
+        "id": 2,
         "name": "Get all actors",
         "sql": "select * from sakila.actor"
       }

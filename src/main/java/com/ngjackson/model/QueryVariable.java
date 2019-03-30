@@ -1,14 +1,28 @@
 package com.ngjackson.model;
 
-public abstract class QueryVariable {
+public class QueryVariable {
 	
-	public String value;
+	public String name;
+	public String type;
 
-	public QueryVariable(String value) {
-		this.value = value;
+	public QueryVariable(String name, String type) {
+		this.name = name;
+		this.type = type;
 	}
 
-	public abstract String getType();
-	public abstract String getVariableSubstitution();
+	public String getName() {
+		return name;
+	}
 
+	public String getType() {
+		return type;
+	}
+
+	@Override
+	public String toString() {
+		return "QueryVariable{" +
+				"name='" + name + '\'' +
+				", type='" + type + '\'' +
+				'}';
+	}
 }

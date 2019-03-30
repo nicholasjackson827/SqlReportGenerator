@@ -5,7 +5,11 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.ngjackson.model.Query;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
 import org.springframework.core.io.ClassPathResource;
 
 import java.io.BufferedReader;
@@ -21,8 +25,8 @@ import java.util.stream.Collectors;
  */
 public class QueryUtil {
 
-  @Value("${queries.json.filePath}")
-  private String queriesJsonFilePath;
+  @Autowired
+  private Environment env;
 
   /**
    * Gets the Query object from the queries JSON file.
@@ -54,7 +58,8 @@ public class QueryUtil {
    * @throws IOException if we're unable to read the file
    */
   private String getQueriesJson() throws IOException {
-    ClassPathResource resource = new ClassPathResource(this.queriesJsonFilePath);
+
+    ClassPathResource resource = new ClassPathResource("queries.json");
     InputStream inputStream = resource.getInputStream();
 
     return new BufferedReader(new InputStreamReader(inputStream))
