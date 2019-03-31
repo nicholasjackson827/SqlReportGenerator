@@ -7,6 +7,6 @@ import java.util.Map;
 
 public interface QueryExecutor {
 
-  public List<Map<String, Object>> executeQuery(Query query);
+  public List<Map<String, Object>> executeQuery(Query query, Map<String, Object> variableValues);
 
 }

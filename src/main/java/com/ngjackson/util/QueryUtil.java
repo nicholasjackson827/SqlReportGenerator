@@ -52,6 +52,23 @@ public class QueryUtil {
   }
 
   /**
+   * Gets a query by an ID.
+   *
+   * @param id The ID of the query to find
+   * @return The query, null if it doesn't exist
+   * @throws IOException if we're unable to read the queries JSON file
+   */
+  public Query getQueryById(String id) throws IOException {
+    List<Query> queries = new QueryUtil().getQueries();
+
+    return queries
+        .stream()
+        .filter(q -> q.getTemplate().getId().equals(id))
+        .findFirst()
+        .orElseGet(null);
+  }
+
+  /**
    * Gets the JSON for the queries.
    *
    * @return A string with the JSON object
